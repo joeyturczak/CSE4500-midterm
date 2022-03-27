@@ -24,7 +24,9 @@
           <td>{{ $manufacturer->id }}</td>
           <td>{{ $manufacturer->name }}</td>
           <td>
-            <a class="btn btn-default btn-sm" style="text-align: center" href="{{ route('manufacturers.show', ['manufacturer'=>$manufacturer->id]) }}">View</a>
+            <div style="margin: 0 auto;">
+              <a class="btn btn-default btn-sm" style="text-align: center" href="{{ route('manufacturers.show', ['manufacturer'=>$manufacturer->id]) }}">View</a>
+            </div>
           </td>
         </tr>
         @endforeach
@@ -33,7 +35,7 @@
     </table>
   </div>
 </div>
-<a href="{{ route('manufacturers.create') }}" class="btn btn-primary" >Create</a>
+<a href="{{ route('manufacturers.create') }}" class="btn btn-primary">Create</a>
 @stop
 
 @section('js')
