@@ -30,9 +30,10 @@
           </td>
           <td>
             <div style="display: inline">
-              <a class="btn btn-default btn-sm" href="{{ route('manufacturers.edit', ['manufacturer'=>$manufacturer->id]) }}">Edit</a>
               
-              <form action="{{ route('manufacturers.destroy', ['manufacturer'=>$manufacturer->id]) }}" method="POST">
+              
+              <form style="margin: 0; padding: 0" action="{{ route('manufacturers.destroy', ['manufacturer'=>$manufacturer->id]) }}" method="POST">
+                <a class="btn btn-default btn-sm" href="{{ route('manufacturers.edit', ['manufacturer'=>$manufacturer->id]) }}">Edit</a>
                 @csrf
 
                 @method('DELETE')
