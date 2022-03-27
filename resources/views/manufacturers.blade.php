@@ -24,7 +24,7 @@
           <td>{{ $manufacturer->id }}</td>
           <td>{{ $manufacturer->name }}</td>
           <td>
-            <div style="text-align: center;">
+            <div style="width: 100%; text-align: center;">
               <a class="btn btn-default btn-sm" href="{{ route('manufacturers.show', ['manufacturer'=>$manufacturer->id]) }}">View</a>
             </div>
           </td>
