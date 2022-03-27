@@ -14,7 +14,7 @@
     <table id="table" class="table table-bordered">
       <thead>
         <tr>
-          <th style="width: 10px">#</th><th>Name</th><th style="width: 150px">Contact Info</th>
+          <th style="width: 10px">#</th><th>Name</th><th style="width: 120px">Contact Info</th>
         </tr>
       </thead>
       <tbody>
@@ -24,7 +24,7 @@
           <td>{{ $manufacturer->id }}</td>
           <td>{{ $manufacturer->name }}</td>
           <td>
-            <div style="width: 100%; text-align: center;">
+            <div style="text-align: center;">
               <a class="btn btn-default btn-sm" href="{{ route('manufacturers.show', ['manufacturer'=>$manufacturer->id]) }}">View</a>
             </div>
           </td>
