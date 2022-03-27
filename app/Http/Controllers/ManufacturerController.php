@@ -76,7 +76,8 @@ class ManufacturerController extends Controller
      */
     public function edit($id)
     {
-        //
+        $manufacturer = Manufacturer::find($id);
+        return view('manufacturers.edit', compact('manufacturer'));
     }
 
     /**
@@ -88,7 +89,23 @@ class ManufacturerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required',
+            'sales_phone' => 'required',
+            'sales_email' => 'required',
+            'support_phone' => 'required',
+            'support_email' => 'required',
+        ]);
+
+        $todo = Manufacturer::update([
+            'name' => $request->name,
+            'sales_phone' => $request->sales_phone,
+            'sales_email' => $request->sales_email,
+            'support_phone' => $request->support_phone,
+            'support_email' => $request->support_email,
+        ]);
+
+        return $this->index();
     }
 
     /**
