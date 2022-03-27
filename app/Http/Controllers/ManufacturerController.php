@@ -105,7 +105,7 @@ class ManufacturerController extends Controller
         $manufacturer->support_phone = $request->support_phone;
         $manufacturer->support_email = $request->support_email;
 
-        $manufacturer->save();
+        $manufacturer->update();
 
         return $this->index();
     }
