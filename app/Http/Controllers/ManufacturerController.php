@@ -97,13 +97,14 @@ class ManufacturerController extends Controller
             'support_email' => 'required',
         ]);
 
-        $manufacturer = Manufacturer::updateOrCreate([
-            'name' => $request->name,
-            'sales_phone' => $request->sales_phone,
-            'sales_email' => $request->sales_email,
-            'support_phone' => $request->support_phone,
-            'support_email' => $request->support_email,
-        ]);
+        $manufacturer = Manufacturer::find($id);
+        $manufacturer->name = $request->name;
+        $manufacturer->sales_phone = $request->sales_phone;
+        $manufacturer->sales_email = $request->sales_email;
+        $manufacturer->support_phone = $request->support_phone;
+        $manufacturer->support_email = $request->support_email;
+
+        $manufacturer->save();
 
         return $this->index();
     }
