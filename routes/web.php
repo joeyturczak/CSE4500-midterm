@@ -22,7 +22,7 @@ Route::get('/home', function () {
     return view('welcome');
 });
 
-Route::resourse('/manufacturers', ManufacturerController::class);
+Route::resource('/manufacturers', ManufacturerController::class);
 
 Route::get('/hardware', function() {
     return view('hardware');
