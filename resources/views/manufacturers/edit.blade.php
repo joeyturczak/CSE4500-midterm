@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-<form method="post" action="{{ route('manufacturers.update', ['manufacturer'=>$manufacturer->id]) }}">
+<form method="put" action="{{ route('manufacturers.update', ['manufacturer'=>$manufacturer->id]) }}">
   @csrf
   <x-adminlte-input name="name" value="{{ $manufacturer->name }}" label="Name" />
   <x-adminlte-input name="sales_phone" value="{{ $manufacturer->sales_phone }}" label="Sales Phone Number" />
