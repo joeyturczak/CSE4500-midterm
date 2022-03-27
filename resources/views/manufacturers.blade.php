@@ -14,7 +14,7 @@
     <table id="table" class="table table-bordered">
       <thead>
         <tr>
-          <th style="width: 10px">#</th><th>Name</th><th style="width: 80px">Contact Info</th><th style="width: 100px">Action</th>
+          <th style="width: 10px">#</th><th>Name</th><th style="width: 90px">Contact Info</th><th style="width: 100px">Action</th>
         </tr>
       </thead>
       <tbody>
