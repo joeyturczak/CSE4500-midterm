@@ -99,11 +99,11 @@ class ManufacturerController extends Controller
 
         $manufacturer = Manufacturer::find($id);
 
-        $manufacturer->name = $request['name'];
-        $manufacturer->sales_phone = $request['sales_phone'];
-        $manufacturer->sales_email = $request['sales_email'];
-        $manufacturer->support_phone = $request['support_phone'];
-        $manufacturer->support_email = $request['support_email'];
+        $manufacturer->name = $request->name;
+        $manufacturer->sales_phone = $request->sales_phone;
+        $manufacturer->sales_email = $request->sales_email;
+        $manufacturer->support_phone = $request->support_phone;
+        $manufacturer->support_email = $request->support_email;
 
         $manufacturer->save();
 
