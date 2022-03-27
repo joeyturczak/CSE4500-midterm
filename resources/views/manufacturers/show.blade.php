@@ -8,11 +8,12 @@
 
 @section('content')
   <h2>{{ $manufacturer->name; }}</h2>
+  <hr>
   <div>
-    <h3>Sales Contact Information</h3>
+    <h4>Sales Contact Information</h4>
     <p>{{ $manufacturer->sales_phone; }}</p>
     <p>{{ $manufacturer->sales_email; }}</p>
-    <h3>Tech Support Contact Information</h3>
+    <h4>Tech Support Contact Information</h4>
     <p>{{ $manufacturer->support_phone; }}</p>
     <p>{{ $manufacturer->support_email; }}</p>
   </div>
