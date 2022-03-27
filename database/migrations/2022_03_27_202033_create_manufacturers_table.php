@@ -21,7 +21,6 @@ return new class extends Migration
             $table->string('support_phone');
             $table->string('support_email');
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
