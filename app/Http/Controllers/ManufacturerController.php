@@ -119,7 +119,8 @@ class ManufacturerController extends Controller
     public function destroy($id)
     {
         $manufacturer = Manufacturer::find($id);
-        $manufacturer->forceDelete();
+        
+        $manufacturer->delete();
 
         return $this->index();
     }

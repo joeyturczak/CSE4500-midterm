@@ -32,10 +32,13 @@
             <div style="display: inline">
               <a class="btn btn-default btn-sm" href="{{ route('manufacturers.edit', ['manufacturer'=>$manufacturer->id]) }}">Edit</a>
               
-              <a class="btn btn-default btn-sm" href="{!! Form::open(['route' => ['manufacturers.destroy', $manufacturers->id], 'method' => 'DELETE']) !!}
-                {!! Form::submit('DELETE') !!}
-                {!! Form::close() !!}">Delete</a>
-              <!-- <a class="btn btn-default btn-sm" href="{{ route('manufacturers.destroy', ['manufacturer'=>$manufacturer->id]) }}">Delete</a> -->
+              <form action="{{ route('manufacturers.destroy', ['manufacturer'=>$manufacturer->id]) }}" method="POST">
+                @csrf
+
+                @method('DELETE')
+
+                <button type="submit" class="btn btn-danger btn-block">Delete</button>
+              </form>
             </div>
           </td>
         </tr>
