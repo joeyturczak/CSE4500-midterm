@@ -45,7 +45,7 @@ class ManufacturerController extends Controller
             'support_email' => 'required',
         ]);
 
-        $todo = Manufacturer::create([
+        $manufacturer = Manufacturer::create([
             'name' => $request->name,
             'sales_phone' => $request->sales_phone,
             'sales_email' => $request->sales_email,
@@ -97,7 +97,7 @@ class ManufacturerController extends Controller
             'support_email' => 'required',
         ]);
 
-        $todo = Manufacturer::update([
+        $manufacturer = Manufacturer::updateOrCreate([
             'name' => $request->name,
             'sales_phone' => $request->sales_phone,
             'sales_email' => $request->sales_email,
@@ -116,6 +116,6 @@ class ManufacturerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Manufacturer::destroy($id);
     }
 }
