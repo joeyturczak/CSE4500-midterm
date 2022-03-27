@@ -31,8 +31,11 @@
           <td>
             <div style="display: inline">
               <a class="btn btn-default btn-sm" href="{{ route('manufacturers.edit', ['manufacturer'=>$manufacturer->id]) }}">Edit</a>
-              @method('DELETE')
-              <a class="btn btn-default btn-sm" href="{{ route('manufacturers.destroy', ['manufacturer'=>$manufacturer->id]) }}">Delete</a>
+              
+              <a class="btn btn-default btn-sm" href="{!! Form::open(['route' => ['manufacturers.destroy', $manufacturers->id], 'method' => 'DELETE']) !!}
+                {!! Form::submit('DELETE') !!}
+                {!! Form::close() !!}">Delete</a>
+              <!-- <a class="btn btn-default btn-sm" href="{{ route('manufacturers.destroy', ['manufacturer'=>$manufacturer->id]) }}">Delete</a> -->
             </div>
           </td>
         </tr>
