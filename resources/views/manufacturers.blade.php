@@ -25,7 +25,7 @@
           <td>{{ $manufacturer->name }}</td>
           <td>
             <div style="text-align: center;">
-              <a class="btn btn-default btn-sm" href="{{ route('manufacturers.show', ['manufacturer'=>$manufacturer->id]) }}">View</a>
+              <a class="btn btn-default" href="{{ route('manufacturers.show', ['manufacturer'=>$manufacturer->id]) }}">View</a>
             </div>
           </td>
           <td>
@@ -33,7 +33,7 @@
               
               
               <form style="margin: 0; padding: 0" action="{{ route('manufacturers.destroy', ['manufacturer'=>$manufacturer->id]) }}" method="POST">
-                <a class="btn btn-default btn-sm" href="{{ route('manufacturers.edit', ['manufacturer'=>$manufacturer->id]) }}">Edit</a>
+                <a class="btn btn-default" href="{{ route('manufacturers.edit', ['manufacturer'=>$manufacturer->id]) }}">Edit</a>
                 @csrf
 
                 @method('DELETE')
