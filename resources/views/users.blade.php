@@ -14,7 +14,7 @@
     <table id="table" class="table table-bordered">
       <thead>
         <tr>
-          <th style="width: 10px">#</th><th>Name</th><th style="width: 100px">Label</th>
+          <th style="width: 10px">#</th><th>Name</th><th style="width: 150px">Contact Info</th>
         </tr>
       </thead>
       <tbody>
@@ -24,7 +24,7 @@
           <td>{{ $manufacturer->id }}</td>
           <td>{{ $manufacturer->name }}</td>
           <td>
-            <a class="btn btn-default btn-sm" href="{{ route('manufacturers.show', ['manufacturer'=>$manufacturer->id]) }}">View Contact Info</a>
+            <a class="btn btn-default btn-sm" style="text-align: center" href="{{ route('manufacturers.show', ['manufacturer'=>$manufacturer->id]) }}">View</a>
           </td>
         </tr>
         @endforeach
