@@ -14,7 +14,7 @@
     <table id="table" class="table table-bordered">
       <thead>
         <tr>
-          <th style="width: 10px">#</th><th>Name</th><th style="width: 100px">Contact Info</th><th style="width: 40px">Action</th>
+          <th style="width: 10px">#</th><th>Name</th><th style="width: 100px">Contact Info</th><th style="width: 80px">Action</th>
         </tr>
       </thead>
       <tbody>
@@ -30,6 +30,7 @@
           </td>
           <td>
             <a class="btn btn-default btn-sm" href="{{ route('manufacturers.edit', ['manufacturer'=>$manufacturer->id]) }}">Edit</a>
+            <a class="btn btn-default btn-sm" href="{{ route('manufacturers.destroy', ['manufacturer'=>$manufacturer->id]) }}">Delete</a>
           </td>
         </tr>
         @endforeach
