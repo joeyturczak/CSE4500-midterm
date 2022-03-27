@@ -45,7 +45,7 @@ class ManufacturerController extends Controller
             'support_email' => 'required',
         ]);
 
-        $todo = Todo::create([
+        $todo = Manufacturer::create([
             'name' => $request->name,
             'sales_phone' => $request->sales_phone,
             'sales_email' => $request->sales_email,
