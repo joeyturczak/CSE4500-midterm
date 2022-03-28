@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Userdevice;
+use App\Models\Deviceuser;
 use App\Models\Device;
 
 class Userdevice extends Model

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Manufacturer;
 use App\Models\Category;
+use App\Models\Userdevice;
 
 class Device extends Model
 {
@@ -33,5 +34,10 @@ class Device extends Model
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function userdevice()
+    {
+        return $this->hasMany(Userdevice::class);
     }
 }
