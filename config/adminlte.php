@@ -240,6 +240,11 @@ return [
             'icon' => 'fas fa-fw fa-hdd',
         ],
         [
+            'text' => 'Devices',
+            'url'  => 'devices',
+            'icon' => 'fas fa-fw fa-hdd',
+        ],
+        [
             'text' => 'Equipment',
             'url'  => 'equipments',
             'icon' => 'fas fa-fw fa-keyboard',
