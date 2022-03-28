@@ -236,12 +236,12 @@ return [
         ],
         [
             'text' => 'Hardware',
-            'url'  => 'hardware',
+            'url'  => 'hardwares',
             'icon' => 'fas fa-fw fa-hdd',
         ],
         [
             'text' => 'Equipment',
-            'url'  => 'equipment',
+            'url'  => 'equipments',
             'icon' => 'fas fa-fw fa-keyboard',
         ],
         [         
