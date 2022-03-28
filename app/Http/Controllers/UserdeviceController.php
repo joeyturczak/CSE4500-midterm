@@ -52,12 +52,14 @@ class UserdeviceController extends Controller
             'purchase_date' => 'required',
         ]);
 
+        $format = "Y-m-d";
+
         $userdevices = Userdevice::create([
             'device_id' => $request->device_id,
             'deviceuser_id' => $request->deviceuser_id,
             'invoice_number' => $request->invoice_number,
             'price' => $request->price,
-            'purchase_date' => $request->purchase_date,
+            'purchase_date' => date($format, strtotime($request->purchase_date)),
         ]);
 
         return $this->index();
@@ -107,13 +109,15 @@ class UserdeviceController extends Controller
             'purchase_date' => 'required',
         ]);
 
+        $format = "Y-m-d";
+
         $userdevice = Device::find($id);
 
         $userdevice->device_id = $request->device_id;
         $userdevice->deviceuser_id = $request->deviceuser_id;
         $userdevice->invoice_number = $request->invoice_number;
         $userdevice->price = $request->price;
-        $userdevice->purchase_date = $request->purchase_date;
+        $userdevice->purchase_date = date($format, strtotime($request->purchase_date));
 
         $userdevice->update();
 
