@@ -5,11 +5,7 @@
 @section('title', 'Equipment')
 
 @section('content_header')
-    <h1>Equipment
-      <a style="float:right; margin-left:2.5em" href="{{ route('userdevices.index', ['view_type'=>'manufacturer']) }}" class="btn btn-primary">View by Manufacturer</a>
-      <a style="float:right; margin-left:2.5em" href="{{ route('userdevices.index', ['view_type'=>'category']) }}" class="btn btn-primary">View by Category</a>
-      <a style="float:right" href="{{ route('userdevices.index', ['view_type'=>'user']) }}" class="btn btn-primary">View by User</a>
-    </h1>
+    <h1>Equipment</h1>
 @stop
 
 @section('content')
