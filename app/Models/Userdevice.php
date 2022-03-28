@@ -19,7 +19,7 @@ class Userdevice extends Model
         'device_id',
     ];
 
-    public function user()
+    public function deviceuser()
     {
         return $this->belongsTo(Deviceuser::class);
     }
