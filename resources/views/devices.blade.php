@@ -48,10 +48,12 @@
     </table>
   </div>
 </div>
-@if ($categories->count() > 0)
-  <a href="{{ route('devices.create') }}" class="btn btn-primary">Create</a>
+@if ($categories->count() <= 0)
+<p>At least one category must be created before creating a hardware device</p>
+@elseif ($manufacturers->count() <= 0)
+  <p>At least one manufacturer must be created before creating a hardware device</p>
 @else
-  <p>At least one category must be created before creating a hardware device</p>
+  <a href="{{ route('devices.create') }}" class="btn btn-primary">Create</a>
 @endif
 @stop
 
