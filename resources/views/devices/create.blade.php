@@ -16,7 +16,7 @@ $options = array();
 <form method="post" action="{{ route('devices.store') }}">
   @csrf
   <x-adminlte-select name="manufacturer_id" label="Manufacturer">
-    <x-adminlte-options :options="$options" />
+    <x-adminlte-options :options="{{ $options }}" />
   </x-adminlte-select>
   <x-adminlte-input name="name" label="Name" />
   <x-adminlte-input name="spec_screen_size" label="Screen Size" />
