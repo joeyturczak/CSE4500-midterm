@@ -25,7 +25,7 @@
     @endforeach
   </x-adminlte-select>
 
-  <x-adminlte-input name="description" type="textarea" label="Description" />
+  <x-adminlte-textarea name="description" label="Description" />
   <x-adminlte-button type="Submit" label="Submit" />
 </form>
 @stop
