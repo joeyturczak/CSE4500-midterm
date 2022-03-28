@@ -48,7 +48,11 @@
     </table>
   </div>
 </div>
-<a href="{{ route('devices.create') }}" class="btn btn-primary">Create</a>
+@if (count($categories) > 0)
+  <a href="{{ route('devices.create') }}" class="btn btn-primary">Create</a>
+@else
+  <p>At least one category must be created before creating a hardware device</p>
+@endif
 @stop
 
 @section('js')
