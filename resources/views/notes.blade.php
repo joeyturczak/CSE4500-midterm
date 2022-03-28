@@ -14,7 +14,7 @@
     <table id="table" class="table table-bordered">
       <thead>
         <tr>
-          <th style="width: 10px">#</th><th>Last Updated</th><th>Manufacturer</th><th>Device Name</th><th>User</th><th>Note Type</th><th style="width: 90px">Information</th><th style="width: 120px">Action</th>
+          <th style="width: 10px">#</th><th>Last Updated</th><th>Manufacturer</th><th>Device Name</th><th>User</th><th>Reason</th><th style="width: 90px">Information</th><th style="width: 120px">Action</th>
         </tr>
       </thead>
       <tbody>
@@ -26,7 +26,7 @@
           <td>{{ $note->userdevice->device->manufacturer->name }}</td>
           <td>{{ $note->userdevice->device->name }}</td>
           <td>{{ $note->userdevice->deviceuser->first_name." ".$note->userdevice->deviceuser->last_name }}</td>
-          <td>{{ $note->type }}</td>
+          <td>{{ $note->reason }}</td>
           <td>
             <div style="text-align: center;">
               <a class="btn btn-default" href="{{ route('notes.show', ['note'=>$note->id]) }}">View</a>

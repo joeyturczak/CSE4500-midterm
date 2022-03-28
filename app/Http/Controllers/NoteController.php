@@ -44,14 +44,14 @@ class NoteController extends Controller
     {
         $validated = $request->validate([
             'userdevice_id' => 'required',
-            'type' => 'required',
-            'note' => 'required',
+            'reason' => 'required',
+            'description' => 'required',
         ]);
 
         $notes = Note::create([
             'userdevice_id' => $request->userdevice_id,
-            'type' => $request->type,
-            'note' => $request->note,
+            'reason' => $request->reason,
+            'description' => $request->description,
         ]);
 
         return $this->index();
@@ -93,15 +93,15 @@ class NoteController extends Controller
     {
         $validated = $request->validate([
             'userdevice_id' => 'required',
-            'type' => 'required',
-            'note' => 'required',
+            'reason' => 'required',
+            'description' => 'required',
         ]);
 
         $note = Note::find($id);
 
         $note->userdevice_id = $request->userdevice_id;
-        $note->type = $request->type;
-        $note->note = $request->note;
+        $note->reason = $request->reason;
+        $note->description = $request->description;
 
         $note->update();
 

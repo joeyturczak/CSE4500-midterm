@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('notes', function (Blueprint $table) {
             $table->id();
-            $table->text('note');
-            $table->string('type');
+            $table->text('description');
+            $table->string('reason');
             $table->foreignId('userdevice_id')->constrained('userdevices')->onDelete('cascade');
             $table->timestamps();
         });
