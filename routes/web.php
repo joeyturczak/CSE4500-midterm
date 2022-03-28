@@ -34,9 +34,7 @@ Route::resource('/devices', DeviceController::class);
 
 Route::resource('/deviceusers', DeviceuserController::class);
 
-Route::get('/userdevices/{view_type}', ['as' => '/userdevices.index', 'uses' => 'UserdeviceController@index']);
-
-Route::resource('/userdevices', UserdeviceController::class, ['except' => ['index']]);
+Route::resource('/userdevices', UserdeviceController::class);
 
 
 Route::fallback(function() {
