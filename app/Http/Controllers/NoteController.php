@@ -31,7 +31,7 @@ class NoteController extends Controller
     {
         $userdevices = Userdevice::all();
 
-        return view('notes.create', compact('deviceusers'));
+        return view('notes.create', compact('userdevices'));
     }
 
     /**
