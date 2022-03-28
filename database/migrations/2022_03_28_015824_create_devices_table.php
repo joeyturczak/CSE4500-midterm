@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('spec_screen_size')->nullable();
             $table->string('spec_ram')->nullable();
             $table->string('spec_storage')->nullable();
-            $table->foreignId('manufacturer_id')->constrained('manufacturers');
-            $table->foreignId('category_id')->constrained('categories');
+            $table->foreignId('manufacturer_id')->constrained('manufacturers')->onDelete('cascade');
+            $table->foreignId('category_id')->constrained('categories')->onDelete('cascade');
             $table->timestamps();
         });
     }
