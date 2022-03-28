@@ -17,7 +17,7 @@
     @endforeach
   </x-adminlte-select>
 
-  $options = ['Software'. 'Service', 'Other'];
+  @php ($options = ['Software'. 'Service', 'Other'])
 
   <x-adminlte-select name="reason" label="Reason">
     @foreach($options AS $o)
