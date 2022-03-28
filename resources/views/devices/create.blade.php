@@ -17,7 +17,7 @@
   @csrf
   <x-adminlte-select name="manufacturer_id" label="Manufacturer">
     @foreach($manufacturers AS $m)
-      <x-adminlte-option value='{{ $m->id }}'>{{ $m->name }}</x-adminlte-option>
+      <option value='{{ $m->id }}'>{{ $m->name }}</option>
     #endforeach
   </x-adminlte-select>
   <x-adminlte-input name="name" label="Name" />
