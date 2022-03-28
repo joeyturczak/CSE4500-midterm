@@ -5,6 +5,7 @@ use App\Http\Controllers\ManufacturerController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DeviceController;
 use App\Http\Controllers\DeviceuserController;
+use App\Http\Controllers\UserdeviceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,9 +34,7 @@ Route::resource('/devices', DeviceController::class);
 
 Route::resource('/deviceusers', DeviceuserController::class);
 
-Route::get('/userdevices', function() {
-    return view('equipment');
-});
+Route::resource('/userdevices', UserdeviceController::class);
 
 
 Route::fallback(function() {
