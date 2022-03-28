@@ -6,7 +6,7 @@
 
 @section('content_header')
     <h1>Hardware
-      <a style="float:right" href="{{ route('events.create') }}" class="btn btn-primary">Manage Categories</a>
+      <a style="float:right" href="{{ route('categories') }}" class="btn btn-primary">Manage Categories</a>
     </h1>
 @stop
 
