@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ManufacturerController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,8 @@ Route::get('/home', function () {
 });
 
 Route::resource('/manufacturers', ManufacturerController::class);
+
+Route::resource('/categories', CategoryController::class);
 
 Route::get('/hardware', function() {
     return view('hardware');

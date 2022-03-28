@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Category;
 
 class CategoryController extends Controller
 {
@@ -25,7 +26,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('categories.create')
     }
 
     /**
@@ -36,7 +37,15 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required',
+        ]);
+
+        $category = Category::create([
+            'name' => $request->name,
+        ]);
+
+        return $this->index();
     }
 
     /**
@@ -58,7 +67,8 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $category = Category::find($id);
+        return view('categories.edit', compact('category'));
     }
 
     /**
@@ -70,7 +80,17 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required',
+        ]);
+
+        $category = Category::find($id);
+
+        $category->name = $request->name;
+
+        $category->update();
+
+        return $this->index();
     }
 
     /**
@@ -81,6 +101,10 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category = Category::find($id);
+        
+        $category->delete();
+
+        return $this->index();
     }
 }
