@@ -241,7 +241,7 @@ return [
         ],
         [
             'text' => 'Equipment',
-            'url'  => 'equipments',
+            'url'  => 'userdevices',
             'icon' => 'fas fa-fw fa-keyboard',
         ],
         [         
