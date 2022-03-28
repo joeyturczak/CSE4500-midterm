@@ -7,13 +7,13 @@
 @stop
 
 @section('content')
-<form method="post" action="{{ route('hardwares.update', ['hardware'=>$hardware->id]) }}">
+<form method="post" action="{{ route('devices.update', ['device'=>$device->id]) }}">
   @csrf
   @method('PUT')
-  <x-adminlte-input name="name" value="{{ $hardware->name }}" label="Name" />
-  <x-adminlte-input name="spec_screen_size" value="{{ $hardware->sales_phone }}" label="Screen Size" />
-  <x-adminlte-input name="spec_ram" value="{{ $hardware->sales_email }}" label="RAM" />
-  <x-adminlte-input name="spec_storage" value="{{ $hardware->support_phone }}" label="Storage" />
+  <x-adminlte-input name="name" value="{{ $device->name }}" label="Name" />
+  <x-adminlte-input name="spec_screen_size" value="{{ $device->spec_screen_size }}" label="Screen Size" />
+  <x-adminlte-input name="spec_ram" value="{{ $device->spec_ram }}" label="RAM" />
+  <x-adminlte-input name="spec_storage" value="{{ $device->spec_storage }}" label="Storage" />
   <x-adminlte-button type="Submit" label="Submit" />
 </form>
 @stop
