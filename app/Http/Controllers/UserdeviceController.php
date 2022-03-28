@@ -53,13 +53,6 @@ class UserdeviceController extends Controller
         return view('userdevices', compact('userdevices', 'devices', 'deviceusers', 'manufacturers', 'view_type', 'id'));
     }
 
-    public function userlist()
-    {
-        $deviceusers = Deviceuser::all();
-
-        return view('userdevices.userlist', compact('deviceusers'));
-    }
-
     /**
      * Show the form for creating a new resource.
      *
