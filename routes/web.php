@@ -28,7 +28,7 @@ Route::resource('/manufacturers', ManufacturerController::class);
 Route::resource('/categories', CategoryController::class);
 
 Route::get('/hardware', function() {
-    return view('hardware');
+    return view('hardwares');
 });
 
 Route::get('/equipment', function() {
