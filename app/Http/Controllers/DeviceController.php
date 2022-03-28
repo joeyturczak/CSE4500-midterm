@@ -53,7 +53,7 @@ class DeviceController extends Controller
             'spec_storage' => 'nullable',
         ]);
 
-        $hardware = Device::create([
+        $device = Device::create([
             'name' => $request->name,
             'manufacturer_id' => $request->manufacturer_id,
             'category_id' => $request->category_id,
