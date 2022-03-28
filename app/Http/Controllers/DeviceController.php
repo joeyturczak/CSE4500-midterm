@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Device;
 use App\Models\Manufacturer;
+use App\Models\Categories;
 
 class DeviceController extends Controller
 {
@@ -28,8 +29,9 @@ class DeviceController extends Controller
     public function create()
     {
         $manufacturers = Manufacturer::all();
+        $categories = Category::all();
 
-        return view('devices.create', compact('manufacturers'));
+        return view('devices.create', compact('manufacturers', 'categories'));
     }
 
     /**
