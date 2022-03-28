@@ -15,8 +15,8 @@
     <h4>Category</h4>
     <p>{{ $device->category->name }}</p>
     <h4>Specification</h4>
-    <p>{{ $device->spec_screen_size; }}</p>
-    <p>{{ $device->spec_ram; }}</p>
-    <p>{{ $device->spec_storage; }}</p>
+    <p>Screen size: {{ $device->spec_screen_size; }}</p>
+    <p>RAM: {{ $device->spec_ram; }}</p>
+    <p>Storage: {{ $device->spec_storage; }}</p>
   </div>
 @stop
