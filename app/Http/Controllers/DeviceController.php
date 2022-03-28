@@ -17,8 +17,10 @@ class DeviceController extends Controller
     public function index()
     {
         $devices = Device::all();
+        $categories = Category::all();
+        $manufacturers = Manufacturer::all();
 
-        return view('devices', compact('devices'));
+        return view('devices', compact('devices', 'categories', 'manufacturers'));
     }
 
     /**
