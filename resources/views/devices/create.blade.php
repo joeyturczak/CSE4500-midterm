@@ -8,15 +8,17 @@
 
 @section('content')
 
-$options = array();
+<!-- $options = array();
 @foreach($manufacturers AS $m)
   $options[$m->id] = $m->name;
-@endforeach
+@endforeach -->
 
 <form method="post" action="{{ route('devices.store') }}">
   @csrf
   <x-adminlte-select name="manufacturer_id" label="Manufacturer">
-    <x-adminlte-options :options="{{ $options }}" />
+    @foreach($manufacturers AS $m)
+      <x-adminlte-option value='{{ $m->id }}'>{{ $m->name }}</x-adminlte-option>
+    #endforeach
   </x-adminlte-select>
   <x-adminlte-input name="name" label="Name" />
   <x-adminlte-input name="spec_screen_size" label="Screen Size" />
