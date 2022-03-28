@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Userdevice;
+use App\Models\Device;
+use App\Models\Deviceuser;
 
 class UserdeviceController extends Controller
 {
@@ -13,7 +16,11 @@ class UserdeviceController extends Controller
      */
     public function index()
     {
-        //
+        $userdevices = Userdevice::all();
+        $devices = Device::all();
+        $deviceusers = Deviceuser::all();
+
+        return view('userdevices', compact('userdevices', 'devices', 'deviceusers'));
     }
 
     /**
@@ -23,7 +30,10 @@ class UserdeviceController extends Controller
      */
     public function create()
     {
-        //
+        $devices = Device::all();
+        $deviceusers = Deviceuser::all();
+
+        return view('userdevices.create', compact('devices', 'deviceusers'));
     }
 
     /**
