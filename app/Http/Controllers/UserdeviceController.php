@@ -27,29 +27,6 @@ class UserdeviceController extends Controller
 
         $userdevices = Userdevice::all();
 
-        if($id == null)
-        {
-            switch($view_type)
-            {
-                case 'user':
-                    $userdevices = Userdevice::where('id', $id)->get();
-                    break;
-                case 'category':
-                    $userdevices = Userdevice::whereHas('device_id', function($d) {
-                        $d->where('category_id', $id);
-                    });
-                    break;
-                case 'manufacturer':
-                    $userdevices = Userdevice::whereHas('device_id', function($d) {
-                        $d->where('manufacturer_id', $id);
-                    });
-                    break;
-                default:
-                    break;
-            }
-        }
-        
-
         return view('userdevices', compact('userdevices', 'devices', 'deviceusers', 'manufacturers', 'view_type', 'id'));
     }
 
