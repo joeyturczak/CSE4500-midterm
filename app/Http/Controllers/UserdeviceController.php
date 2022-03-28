@@ -16,7 +16,7 @@ class UserdeviceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($view_type = 'all', $id = null)
+    public function index($view_type = 'all')
     {
         // $userdevices = Userdevice::all();
 
