@@ -14,9 +14,29 @@ class UserdeviceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($view_type = 'all', $id = null)
     {
-        $userdevices = Userdevice::all();
+        switch($view_type)
+        {
+            case 'user':
+                $userdevices = Userdevice::where('id', $id)->get();
+                break;
+            case 'category':
+                $userdevices = Userdevice::whereHas('device_id', function($d) {
+                    $d->where('category_id', $id);
+                });
+                break;
+            case 'manufacturer':
+                $userdevices = Userdevice::whereHas('device_id', function($d) {
+                    $d->where('manufacturer_id', $id);
+                });
+                break;
+            default:
+                $userdevices = Userdevice::all();
+                break;
+        }
+        // $userdevices = Userdevice::all();
+
         $devices = Device::all();
         $deviceusers = Deviceuser::all();
 

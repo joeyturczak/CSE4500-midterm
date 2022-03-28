@@ -29,7 +29,7 @@
           <td>{{ $userdevice->device->name }}</td>
           <td>{{ $userdevice->device->manufacturer->name }}</td>
           <td>{{ $userdevice->device->category->name }}</td>
-          <td>{{ $userdevice->deviceusers->first_name." ".$userdevice->deviceusers->last_name }}</td>
+          <td>{{ $userdevice->deviceuser->first_name." ".$userdevice->deviceuser->last_name }}</td>
           <td>
             <div style="text-align: center;">
               <a class="btn btn-default" href="{{ route('userdevices.show', ['userdevice'=>$userdevice->id]) }}">View</a>
