@@ -236,11 +236,6 @@ return [
         ],
         [
             'text' => 'Hardware',
-            'url'  => 'hardwares',
-            'icon' => 'fas fa-fw fa-hdd',
-        ],
-        [
-            'text' => 'Devices',
             'url'  => 'devices',
             'icon' => 'fas fa-fw fa-hdd',
         ],
