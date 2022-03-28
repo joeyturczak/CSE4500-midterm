@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('hardwares', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
             $table->string('spec_screen_size')->nullable();
             $table->string('spec_ram')->nullable();
             $table->string('spec_storage')->nullable();
