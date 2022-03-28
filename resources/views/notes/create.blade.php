@@ -13,11 +13,11 @@
 
   <x-adminlte-select name="userdevice_id" label="Equipment">
     @foreach($userdevices AS $d)
-      <option value='{{ $d->id }}'>{{ $d->deviceuser->first_name." ".$d->deviceuser->last_name." ".$d->name." - ID: ".$d->id }}</option>
+      <option value='{{ $d->id }}'>{{ $d->deviceuser->first_name." ".$d->deviceuser->last_name." ".$d->device->name." - ID: ".$d->id }}</option>
     @endforeach
   </x-adminlte-select>
 
-  @php ($options = ['Software'. 'Service', 'Other'])
+  @php ($options = ['Software', 'Service', 'Other'])
 
   <x-adminlte-select name="reason" label="Reason">
     @foreach($options AS $o)
