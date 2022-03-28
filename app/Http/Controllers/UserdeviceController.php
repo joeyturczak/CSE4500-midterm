@@ -22,12 +22,10 @@ class UserdeviceController extends Controller
 
         $devices = Device::all();
         $deviceusers = Deviceuser::all();
-        $manufacturers = Manufacturer::all();
-        $categories = Category::all();
 
         $userdevices = Userdevice::all();
 
-        return view('userdevices', compact('userdevices', 'devices', 'deviceusers', 'manufacturers', 'view_type', 'id'));
+        return view('userdevices', compact('userdevices', 'devices', 'deviceusers'));
     }
 
     /**
