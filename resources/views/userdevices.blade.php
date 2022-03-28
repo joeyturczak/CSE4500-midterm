@@ -29,7 +29,7 @@
           <td>{{ $userdevice->device->name }}</td>
           <td>{{ $userdevice->invoice_number }}</td>
           <td>${{ $userdevice->price }}</td>
-          <td>${{ $userdevice->purchase_date }}</td>
+          <td>{{ $userdevice->purchase_date }}</td>
           <td>
             <div style="text-align: center;">
               <a class="btn btn-default" href="{{ route('userdevices.show', ['userdevice'=>$userdevice->id]) }}">View</a>

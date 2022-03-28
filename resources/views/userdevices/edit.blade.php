@@ -32,7 +32,7 @@
   </x-adminlte-select>
 
   <x-adminlte-input name="invoice_number" value="{{ $userdevice->invoice_number }}" label="Invoice #" />
-  <x-adminlte-input name="price" type="number" value="{{ $userdevice->price }}" label="Price" />
+  <x-adminlte-input name="price" type="number" step="0.01" value="{{ $userdevice->price }}" label="Price" />
   <x-adminlte-input name="purchase_date" type="date" value="{{ $userdevice->purchase_date }}" label="Purchase Date" />
   <x-adminlte-button type="Submit" label="Submit" />
 </form>
