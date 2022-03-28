@@ -16,4 +16,9 @@ class Manufacturer extends Model
         'support_phone',
         'support_email'
     ];
+
+    public function hardware()
+    {
+        return $this->hasMany(Hardware::class);
+    }
 }
