@@ -26,7 +26,7 @@ class DeviceController extends Controller
      */
     public function create()
     {
-        //
+        return view('devices.create');
     }
 
     /**
@@ -37,7 +37,25 @@ class DeviceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required',
+            'manufacturer_id' => 'required',
+            'category_id' => 'required',
+            'spec_screen_size' => 'nullable',
+            'spec_ram' => 'nullable',
+            'spec_storage' => 'nullable',
+        ]);
+
+        $hardware = Device::create([
+            'name' => $request->name,
+            'manufacturer_id' => $request->manufacturer_id,
+            'category_id' => $request->category_id,
+            'spec_screen_size' => $request->spec_screen_size,
+            'spec_ram' => $request->spec_ram,
+            'spec_storage' => $request->spec_storage,
+        ]);
+
+        return $this->index();
     }
 
     /**
@@ -48,7 +66,8 @@ class DeviceController extends Controller
      */
     public function show($id)
     {
-        //
+        $device = Device::find($id);
+        return view('devices.show', compact('device'));
     }
 
     /**
@@ -59,7 +78,8 @@ class DeviceController extends Controller
      */
     public function edit($id)
     {
-        //
+        $device = Device::find($id);
+        return view('devices.edit', compact('device'));
     }
 
     /**
@@ -71,7 +91,27 @@ class DeviceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required',
+            'manufacturer_id' => 'required',
+            'category_id' => 'required',
+            'spec_screen_size' => 'nullable',
+            'spec_ram' => 'nullable',
+            'spec_storage' => 'nullable',
+        ]);
+
+        $device = Device::find($id);
+
+        $device->name = $request->name;
+        $device->manufacturer_id = $request->manufacturer_id;
+        $device->category_id = $request->category_id;
+        $device->spec_screen_size = $request->spec_screen_size;
+        $device->spec_ram = $request->spec_ram;
+        $device->spec_storage = $request->spec_storage;
+
+        $device->update();
+
+        return $this->index();
     }
 
     /**
@@ -82,6 +122,10 @@ class DeviceController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $device = Device::find($id);
+        
+        $device->delete();
+
+        return $this->index();
     }
 }
