@@ -24,7 +24,11 @@
   
   <x-adminlte-select name="category_id" value="{{ $device->category_id }}" label="Category">
     @foreach($categories AS $c)
-      <option value='{{ $c->id }}'>{{ $c->name }}</option>
+      @if($c->id == $device->category_id)
+        <option value='{{ $c->id }}' selected="selected">{{ $c->name }}</option>
+      @else
+        <option value='{{ $c->id }}'>{{ $c->name }}</option>
+      @endif
     @endforeach
   </x-adminlte-select>
 
