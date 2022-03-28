@@ -15,6 +15,8 @@ class Hardware extends Model
         'spec_screen_size',
         'spec_ram',
         'spec_storage',
+        'manufacturer_id',
+        'category_id'
     ];
 
     public function manufacturers()
