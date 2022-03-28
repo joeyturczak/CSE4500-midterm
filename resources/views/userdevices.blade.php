@@ -4,28 +4,6 @@
 
 @section('title', 'Equipment')
 
-@if($id == null && $view_type != 'all')
-  @if($view_type == 'user')
-    @section('content')
-    @foreach($deviceusers AS $deviceuser)
-      <a href="{{ route('userdevices.index', ['view_type'=>'user', 'id'=>$deviceuser->id]) }}" class="btn btn-primary">{{ deviceuser->first_name." ".deviceuser->last_name }}</a>
-    @endforeach
-    @stop
-  @elseif($view_type == 'category')
-    @section('content')
-    @foreach($categories AS $category)
-      <a href="{{ route('userdevices.index', ['view_type'=>'category', 'id'=>$category->id]) }}" class="btn btn-primary">{{ category->name }}</a>
-    @endforeach
-    @stop
-  @elseif($view_type == 'manufacturer')
-    @section('content')
-    @foreach($manufacturers AS $manufacturer)
-      <a href="{{ route('userdevices.index', ['view_type'=>'manufacturer', 'id'=>$manufacturer->id]) }}" class="btn btn-primary">{{ manufacturer->name }}</a>
-    @endforeach
-    @stop
-  @endif
-@else
-
 @section('content_header')
     <h1>Equipment
       <a style="float:right; margin-left:2.5em" href="{{ route('userdevices.index', ['view_type'=>'manufacturer']) }}" class="btn btn-primary">View by Manufacturer</a>
@@ -35,6 +13,22 @@
 @stop
 
 @section('content')
+
+@if($id == null && $view_type != 'all')
+  @if($view_type == 'user')
+    @foreach($deviceusers AS $deviceuser)
+      <a href="{{ route('userdevices.index', ['view_type'=>'user', 'id'=>$deviceuser->id]) }}" class="btn btn-primary">{{ deviceuser->first_name." ".deviceuser->last_name }}</a>
+    @endforeach
+  @elseif($view_type == 'category')
+    @foreach($categories AS $category)
+      <a href="{{ route('userdevices.index', ['view_type'=>'category', 'id'=>$category->id]) }}" class="btn btn-primary">{{ category->name }}</a>
+    @endforeach
+  @elseif($view_type == 'manufacturer')
+    @foreach($manufacturers AS $manufacturer)
+      <a href="{{ route('userdevices.index', ['view_type'=>'manufacturer', 'id'=>$manufacturer->id]) }}" class="btn btn-primary">{{ manufacturer->name }}</a>
+    @endforeach
+  @endif
+@else
 <div class="card">
   <div class="card-body">
     <table id="table" class="table table-bordered">
@@ -82,9 +76,11 @@
 @else
   <a href="{{ route('userdevices.create') }}" class="btn btn-primary">Create</a>
 @endif
-@stop
 
 @endif
+@stop
+
+
 
 @section('js')
 <script>
