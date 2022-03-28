@@ -16,6 +16,7 @@
 
 @if($id == null)
   @if($view_type == 'user')
+    <p>Users</p>
     @foreach($deviceusers AS $deviceuser)
       <a href="{{ route('userdevices.index', ['view_type'=>'user', 'id'=>$deviceuser->id]) }}" class="btn btn-primary">{{ deviceuser->first_name." ".deviceuser->last_name }}</a>
     @endforeach
