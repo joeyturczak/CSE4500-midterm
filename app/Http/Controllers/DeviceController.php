@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Device;
 use App\Models\Manufacturer;
-use App\Models\Categories;
+use App\Models\Category;
 
 class DeviceController extends Controller
 {
