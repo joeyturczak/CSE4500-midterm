@@ -5,7 +5,9 @@
 @section('title', 'Hardware')
 
 @section('content_header')
-    <h1>Hardware</h1>
+    <h1>Hardware
+      <a style="float:right" href="{{ route('events.create') }}" class="btn btn-primary">Manage Categories</a>
+    </h1>
 @stop
 
 @section('content')
