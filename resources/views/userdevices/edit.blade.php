@@ -17,7 +17,7 @@
         <option value='{{ $d->id }}' selected="selected">{{ $d->name }}</option>
       @else
         <option value='{{ $d->id }}'>{{ $d->name }}</option>
-      @end
+      @endif
     @endforeach
   </x-adminlte-select>
   
