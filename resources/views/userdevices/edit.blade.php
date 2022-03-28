@@ -13,7 +13,7 @@
 
   <x-adminlte-select name="device_id" label="Hardware Device">
     @foreach($devices AS $d)
-      @if($u->id == $userdevice->device_id)
+      @if($d->id == $userdevice->device_id)
         <option value='{{ $d->id }}' selected="selected">{{ $d->name }}</option>
       @else
         <option value='{{ $d->id }}'>{{ $d->name }}</option>
