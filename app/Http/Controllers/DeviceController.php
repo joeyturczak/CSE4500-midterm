@@ -83,8 +83,11 @@ class DeviceController extends Controller
      */
     public function edit($id)
     {
+        $manufacturers = Manufacturer::all();
+        $categories = Category::all();
+
         $device = Device::find($id);
-        return view('devices.edit', compact('device'));
+        return view('devices.edit', compact('device', 'manufacturers', 'categories'));
     }
 
     /**
