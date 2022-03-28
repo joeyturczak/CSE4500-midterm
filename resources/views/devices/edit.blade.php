@@ -15,7 +15,7 @@
   <x-adminlte-select name="manufacturer_id" value="{{ $device->manufacturer_id }}" label="Manufacturer">
     @foreach($manufacturers AS $m)
       @if($m->id == $device->manufacturer_id)
-        <option value='{{ $m->id }}' selected>{{ $m->name }}</option>
+        <option value='{{ $m->id }}' selected="selected">{{ $m->name }}</option>
       @else
         <option value='{{ $m->id }}'>{{ $m->name }}</option>
       @endif
