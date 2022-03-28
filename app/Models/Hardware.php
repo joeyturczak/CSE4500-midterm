@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Manufacturer;
 
 class Hardware extends Model
 {
@@ -15,6 +16,11 @@ class Hardware extends Model
         'spec_ram',
         'spec_storage',
     ];
+
+    public function manufacturers()
+    {
+        return Manufacturers::class.all();
+    }
 
     public function manufacturer()
     {
