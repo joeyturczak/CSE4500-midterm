@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Manufacturer;
+use App\Models\Category;
 
 class Device extends Model
 {
@@ -21,7 +22,7 @@ class Device extends Model
 
     public function manufacturers()
     {
-        return Manufacturers::all();
+        return Manufacturer::all();
     }
 
     public function manufacturer()

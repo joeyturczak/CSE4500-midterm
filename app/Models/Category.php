@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Device;
 
 class Category extends Model
 {
@@ -13,8 +14,8 @@ class Category extends Model
         'name'
     ];
 
-    public function hardware()
+    public function devices()
     {
-        return $this->hasMany(Hardware::class);
+        return $this->hasMany(Device::class);
     }
 }
