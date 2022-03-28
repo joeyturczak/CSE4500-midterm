@@ -37,6 +37,10 @@ Route::resource('/deviceusers', DeviceuserController::class);
 Route::resource('/userdevices', UserdeviceController::class);
 
 
+Route::get('/userlist', function($deviceusers) {
+    return view('userlist', compact('deviceusers'));
+});
+
 Route::fallback(function() {
     return view('notfound');
 });
