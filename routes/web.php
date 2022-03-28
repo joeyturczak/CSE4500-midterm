@@ -34,8 +34,6 @@ Route::resource('/devices', DeviceController::class);
 
 Route::resource('/deviceusers', DeviceuserController::class);
 
-Route::get('userdevices/userlist', 'UserdeviceController@userlist');
-
 Route::resource('/userdevices', UserdeviceController::class);
 
 
