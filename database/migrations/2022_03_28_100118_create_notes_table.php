@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->text('note');
             $table->string('type');
+            $table->foreignId('userdevice_id')->constrained('userdevices')->onDelete('cascade');
             $table->timestamps();
         });
     }

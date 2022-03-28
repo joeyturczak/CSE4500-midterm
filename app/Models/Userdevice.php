@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Deviceuser;
 use App\Models\Device;
+use App\Models\Note;
 
 class Userdevice extends Model
 {
@@ -27,5 +28,10 @@ class Userdevice extends Model
     public function device()
     {
         return $this->belongsTo(Device::class);
+    }
+
+    public function notes()
+    {
+        return $this->hasMany(Note::class);
     }
 }
