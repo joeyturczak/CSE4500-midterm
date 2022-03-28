@@ -249,6 +249,11 @@ return [
             'url'  => 'users',
             'icon' => 'fas fa-fw fa-id-badge',
         ],
+        [         
+            'text' => 'Notes',
+            'url'  => 'notes',
+            'icon' => 'fas fa-fw fa-comment-alt',
+        ],
     ],
 
     /*
