@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Userdevice;
 use App\Models\Device;
 use App\Models\Deviceuser;
+use App\Models\Manufacturer;
+use App\Models\Category;
 
 class UserdeviceController extends Controller
 {
@@ -16,6 +18,13 @@ class UserdeviceController extends Controller
      */
     public function index($view_type = 'all', $id = null)
     {
+        // $userdevices = Userdevice::all();
+
+        $devices = Device::all();
+        $deviceusers = Deviceuser::all();
+        $manufacturers = Manufacturer::all();
+        $categories = Category::all();
+
         switch($view_type)
         {
             case 'user':
@@ -35,12 +44,8 @@ class UserdeviceController extends Controller
                 $userdevices = Userdevice::all();
                 break;
         }
-        // $userdevices = Userdevice::all();
 
-        $devices = Device::all();
-        $deviceusers = Deviceuser::all();
-
-        return view('userdevices', compact('userdevices', 'devices', 'deviceusers'));
+        return view('userdevices', compact('userdevices', 'devices', 'deviceusers', 'manufacturers', 'view_type', 'id'));
     }
 
     public function userlist()
