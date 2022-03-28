@@ -111,7 +111,7 @@ class UserdeviceController extends Controller
 
         $format = "Y-m-d";
 
-        $userdevice = Device::find($id);
+        $userdevice = Userdevice::find($id);
 
         $userdevice->device_id = $request->device_id;
         $userdevice->deviceuser_id = $request->deviceuser_id;
