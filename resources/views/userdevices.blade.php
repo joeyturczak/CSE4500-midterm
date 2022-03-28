@@ -6,17 +6,23 @@
 
 @if($id == null && $view_type != 'all')
   @if($view_type == 'user')
+    @section('content')
     @foreach($deviceusers AS $deviceuser)
       <a href="{{ route('userdevices.index', ['view_type'=>'user', 'id'=>$deviceuser->id]) }}" class="btn btn-primary">{{ deviceuser->first_name." ".deviceuser->last_name }}</a>
     @endforeach
+    @stop
   @elseif($view_type == 'category')
+    @section('content')
     @foreach($categories AS $category)
       <a href="{{ route('userdevices.index', ['view_type'=>'category', 'id'=>$category->id]) }}" class="btn btn-primary">{{ category->name }}</a>
     @endforeach
+    @stop
   @elseif($view_type == 'manufacturer')
+    @section('content')
     @foreach($manufacturers AS $manufacturer)
       <a href="{{ route('userdevices.index', ['view_type'=>'manufacturer', 'id'=>$manufacturer->id]) }}" class="btn btn-primary">{{ manufacturer->name }}</a>
     @endforeach
+    @stop
   @endif
 @else
 
