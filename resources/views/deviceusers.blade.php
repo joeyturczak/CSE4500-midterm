@@ -2,10 +2,10 @@
 
 @section('plugins.Datatables', true)
 
-@section('title', 'Manufacturers')
+@section('title', 'Users')
 
 @section('content_header')
-    <h1>Manufacturers</h1>
+    <h1>Users</h1>
 @stop
 
 @section('content')
@@ -19,12 +19,12 @@
       </thead>
       <tbody>
         
-        @foreach($manufacturers AS $manufacturer)
+        @foreach($deviceusers AS $deviceuser)
         <tr>
-          <td>{{ $manufacturer->id }}</td>
-          <td>{{ $manufacturer->name }}</td>
+          <td>{{ $deviceuser->id }}</td>
+          <td>{{ $deviceuser->name }}</td>
           <td>
-            <a class="btn btn-default btn-sm" style="text-align: center" href="{{ route('manufacturers.show', ['manufacturer'=>$manufacturer->id]) }}">View</a>
+            <a class="btn btn-default btn-sm" style="text-align: center" href="{{ route('deviceusers.show', ['deviceusers'=>$deviceuser->id]) }}">View</a>
           </td>
         </tr>
         @endforeach
@@ -33,7 +33,7 @@
     </table>
   </div>
 </div>
-<a href="{{ route('manufacturers.create') }}" class="btn btn-primary">Create</a>
+<a href="{{ route('deviceusers.create') }}" class="btn btn-primary">Create</a>
 @stop
 
 @section('js')
