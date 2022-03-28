@@ -18,7 +18,7 @@
     <table id="table" class="table table-bordered">
       <thead>
         <tr>
-          <th style="width: 10px">#</th><th>Device Name</th><th>Invoice #</th><th>Price</th><th>Purchase Date</th><th style="width: 90px">Information</th><th style="width: 120px">Action</th>
+          <th style="width: 10px">#</th><th>Device Name</th><th>Manufacturer</th><th>Category</th><th>User</th><th style="width: 90px">Information</th><th style="width: 120px">Action</th>
         </tr>
       </thead>
       <tbody>
@@ -27,9 +27,9 @@
         <tr>
           <td>{{ $userdevice->id }}</td>
           <td>{{ $userdevice->device->name }}</td>
-          <td>{{ $userdevice->invoice_number }}</td>
-          <td>${{ $userdevice->price }}</td>
-          <td>{{ $userdevice->purchase_date }}</td>
+          <td>{{ $userdevice->device->manufacturer->name }}</td>
+          <td>{{ $userdevice->device->category->name }}</td>
+          <td>{{ $userdevice->deviceusers->first_name." ".$userdevice->deviceusers->last_name }}</td>
           <td>
             <div style="text-align: center;">
               <a class="btn btn-default" href="{{ route('userdevices.show', ['userdevice'=>$userdevice->id]) }}">View</a>
