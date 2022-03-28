@@ -1,20 +1,19 @@
 @extends('adminlte::page')
 
-@section('title', 'Manufacturers')
+@section('title', 'Users')
 
 @section('content_header')
-  <h1>Manufacturers</h1>
+  <h1>Users</h1>
 @stop
 
 @section('content')
-<form method="post" action="{{ route('manufacturers.update', ['manufacturer'=>$manufacturer->id]) }}">
+<form method="post" action="{{ route('deviceusers.update', ['deviceuser'=>$deviceuser->id]) }}">
   @csrf
   @method('PUT')
-  <x-adminlte-input name="name" value="{{ $manufacturer->name }}" label="Name" />
-  <x-adminlte-input name="sales_phone" value="{{ $manufacturer->sales_phone }}" label="Sales Phone Number" />
-  <x-adminlte-input name="sales_email" value="{{ $manufacturer->sales_email }}" label="Sales Email Address" />
-  <x-adminlte-input name="support_phone" value="{{ $manufacturer->support_phone }}" label="Tech Support Phone Number" />
-  <x-adminlte-input name="support_email" value="{{ $manufacturer->support_email }}"  label="Tech Support Email Address" />
+  <x-adminlte-input name="first_name" value="{{ $deviceuser->first_name }}" label="First Name" />
+  <x-adminlte-input name="last_name" value="{{ $deviceuser->last_name }}" label="Last Name" />
+  <x-adminlte-input name="phone" value="{{ $deviceuser->phone }}" label="Phone Number" />
+  <x-adminlte-input name="email" value="{{ $deviceuser->email }}" label="Email Address" />
   <x-adminlte-button type="Submit" label="Submit" />
 </form>
 @stop

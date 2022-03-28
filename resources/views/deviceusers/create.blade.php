@@ -1,19 +1,18 @@
 @extends('adminlte::page')
 
-@section('title', 'Manufacturers')
+@section('title', 'Users')
 
 @section('content_header')
-  <h1>Manufacturers</h1>
+  <h1>Users</h1>
 @stop
 
 @section('content')
-<form method="post" action="{{ route('manufacturers.store') }}">
+<form method="post" action="{{ route('deviceusers.store') }}">
   @csrf
-  <x-adminlte-input name="name" label="Name" />
-  <x-adminlte-input name="sales_phone" label="Sales Phone Number" />
-  <x-adminlte-input name="sales_email" label="Sales Email Address" />
-  <x-adminlte-input name="support_phone" label="Tech Support Phone Number" />
-  <x-adminlte-input name="support_email" label="Tech Support Email Address" />
+  <x-adminlte-input name="first_name" label="First Name" />
+  <x-adminlte-input name="last_name" label="Last Name" />
+  <x-adminlte-input name="phone" label="Phone Number" />
+  <x-adminlte-input name="email" label="Email Address" />
   <x-adminlte-button type="Submit" label="Submit" />
 </form>
 @stop

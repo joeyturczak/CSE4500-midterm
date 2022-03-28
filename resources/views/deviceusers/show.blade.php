@@ -1,20 +1,17 @@
 @extends('adminlte::page')
 
-@section('title', 'Manufacturers')
+@section('title', 'Users')
 
 @section('content_header')
-  <h1>Manufacturers</h1>
+  <h1>Users</h1>
 @stop
 
 @section('content')
-  <h2>{{ $manufacturer->name; }}</h2>
+  <h2>{{ $deviceuser->first_name." ".$deviceuser->last_name; }}</h2>
   <hr>
   <div>
-    <h4>Sales Contact Information</h4>
-    <p>{{ $manufacturer->sales_phone; }}</p>
-    <p>{{ $manufacturer->sales_email; }}</p>
-    <h4>Tech Support Contact Information</h4>
-    <p>{{ $manufacturer->support_phone; }}</p>
-    <p>{{ $manufacturer->support_email; }}</p>
+    <h4>Contact Information</h4>
+    <p>{{ $deviceuser->phone; }}</p>
+    <p>{{ $deviceuser->email; }}</p>
   </div>
 @stop
