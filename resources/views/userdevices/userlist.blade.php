@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-        
+@csrf
 @foreach($deviceusers AS $deviceuser)
 <a href="{{ route('userdevices.index', ['view_type'=>'user', 'id'=>$deviceuser->id]) }}" class="btn btn-primary">{{ deviceuser->first_name." ".deviceuser->last_name}}</a>
 @endforeach
