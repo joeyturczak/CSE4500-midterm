@@ -30,12 +30,10 @@ Route::resource('/categories', CategoryController::class);
 
 Route::resource('/devices', DeviceController::class);
 
-Route::get('/equipment', function() {
-    return view('equipment');
-});
+Route::resource('/deviceusers', DeviceuserController::class);
 
-Route::get('/users', function() {
-    return view('users');
+Route::get('/userdevices', function() {
+    return view('equipment');
 });
 
 
