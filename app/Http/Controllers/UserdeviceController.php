@@ -43,11 +43,11 @@ class UserdeviceController extends Controller
         return view('userdevices', compact('userdevices', 'devices', 'deviceusers'));
     }
 
-    public function deviceuserlist()
+    public function userlist()
     {
         $deviceusers = Deviceuser::all();
 
-        return view('userdevices.deviceuserlist', compact('deviceusers'));
+        return view('userdevices.userlist', compact('deviceusers'));
     }
 
     /**
