@@ -1,7 +1,5 @@
 @extends('adminlte::page')
 
-@section('plugins.Datatables', true)
-
 @section('title', 'Select User')
 
 @section('content_header')
