@@ -246,7 +246,7 @@ return [
         ],
         [         
             'text' => 'Users',
-            'url'  => 'users',
+            'url'  => 'deviceusers',
             'icon' => 'fas fa-fw fa-id-badge',
         ],
         [         
