@@ -65,7 +65,8 @@ class NoteController extends Controller
      */
     public function show($id)
     {
-        //
+        $note = Note::find($id);
+        return view('notes.show', compact('note'));
     }
 
     /**
@@ -76,7 +77,9 @@ class NoteController extends Controller
      */
     public function edit($id)
     {
-        //
+        $userdevices = Userdevice::all();
+        $note = Note::find($id);
+        return view('notes.edit', compact('note', 'userdevices'));
     }
 
     /**
@@ -88,7 +91,21 @@ class NoteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validated = $request->validate([
+            'userdevice_id' => 'required',
+            'type' => 'required',
+            'note' => 'required',
+        ]);
+
+        $note = Note::find($id);
+
+        $note->userdevice_id = $request->userdevice_id;
+        $note->type = $request->type;
+        $note->note = $request->note;
+
+        $note->update();
+
+        return $this->index();
     }
 
     /**
@@ -99,6 +116,10 @@ class NoteController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $note = Note::find($id);
+        
+        $note->delete();
+
+        return $this->index();
     }
 }
