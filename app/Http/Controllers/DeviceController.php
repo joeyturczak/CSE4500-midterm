@@ -26,7 +26,9 @@ class DeviceController extends Controller
      */
     public function create()
     {
-        return view('devices.create');
+        $manufacturers = Device::manufacturers();
+
+        return view('devices.create', compact('manufacturers'));
     }
 
     /**
