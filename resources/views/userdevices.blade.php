@@ -29,7 +29,7 @@
     @endforeach
   @endif
 @else
-<div class="card">
+<!-- <div class="card">
   <div class="card-body">
     <table id="table" class="table table-bordered">
       <thead>
@@ -68,7 +68,7 @@
       </tbody>
     </table>
   </div>
-</div>
+</div> -->
 @if ($devices->count() <= 0)
 <p>At least one hardware device must be created before creating an entry</p>
 @elseif ($deviceusers->count() <= 0)
