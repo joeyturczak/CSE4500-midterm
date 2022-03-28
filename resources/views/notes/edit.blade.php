@@ -28,9 +28,9 @@
   <x-adminlte-select name="userdevice_id" label="Equipment">
     @foreach($userdevices AS $d)
       @if($d->id == $note->userdevice_id)
-        <option value='{{ $d->id }}' selected="selected">{{ $d->deviceuser->first_name." ".$d->deviceuser->last_name."'s "$d->name." - ID: ".$d->id }}</option>
+        <option value='{{ $d->id }}' selected="selected">{{ $d->deviceuser->first_name." ".$d->deviceuser->last_name." -- ".$d->device->name." -- ID: ".$d->id }}</option>
       @else
-        <option value='{{ $d->id }}'>{{ $d->deviceuser->first_name." ".$d->deviceuser->last_name."'s "$d->name." - ID: ".$d->id }}</option>
+        <option value='{{ $d->id }}'>{{ $d->deviceuser->first_name." ".$d->deviceuser->last_name." -- ".$d->device->name." -- ID: ".$d->id }}</option>
       @endif
     @endforeach
   </x-adminlte-select>
