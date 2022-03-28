@@ -10,6 +10,10 @@
   <h2>{{ $device->name; }}</h2>
   <hr>
   <div>
+    <h4>Manufacturer</h4>
+    <p>{{ $device->manufacturer->name }}</p>
+    <h4>Category</h4>
+    <p>{{ $device->category->name }}</p>
     <h4>Specification</h4>
     <p>{{ $device->spec_screen_size; }}</p>
     <p>{{ $device->spec_ram; }}</p>
