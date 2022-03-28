@@ -40,9 +40,4 @@ class Device extends Model
     {
         return $this->hasMany(Userdevice::class);
     }
-
-    public function unassigned_devices()
-    {
-        return Device::without("Userdevices")->get();
-    }
 }
