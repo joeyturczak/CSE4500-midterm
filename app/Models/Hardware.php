@@ -19,7 +19,7 @@ class Hardware extends Model
 
     public function manufacturers()
     {
-        return Manufacturers::class.all();
+        return Manufacturers::all();
     }
 
     public function manufacturer()
