@@ -13,6 +13,7 @@ class Note extends Model
     protected $fillable = [
         'type',
         'note',
+        'userdevice_id',
     ];
 
     public function userdevice()
