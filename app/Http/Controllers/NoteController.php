@@ -42,7 +42,19 @@ class NoteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'userdevice_id' => 'required',
+            'type' => 'required',
+            'note' => 'required',
+        ]);
+
+        $notes = Note::create([
+            'userdevice_id' => $request->userdevice_id,
+            'type' => $request->type,
+            'note' => $request->note,
+        ]);
+
+        return $this->index();
     }
 
     /**
