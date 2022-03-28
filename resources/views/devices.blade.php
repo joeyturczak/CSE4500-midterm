@@ -19,20 +19,20 @@
       </thead>
       <tbody>
         
-        @foreach($hardwares AS $hardware)
+        @foreach($devices AS $device)
         <tr>
-          <td>{{ $hardware->id }}</td>
-          <td>{{ $hardware->name }}</td>
+          <td>{{ $device->id }}</td>
+          <td>{{ $device->name }}</td>
           <td>
             <div style="text-align: center;">
-              <a class="btn btn-default" href="{{ route('hardwares.show', ['hardware'=>$hardware->id]) }}">View</a>
+              <a class="btn btn-default" href="{{ route('devices.show', ['device'=>$device->id]) }}">View</a>
             </div>
           </td>
           <td>
             <div style="display: inline">
 
-              <form style="margin: 0; padding: 0" action="{{ route('hardwares.destroy', ['hardware'=>$hardware->id]) }}" method="POST">
-                <a class="btn btn-default" href="{{ route('hardwares.edit', ['hardware'=>$hardware->id]) }}">Edit</a>
+              <form style="margin: 0; padding: 0" action="{{ route('devices.destroy', ['device'=>$device->id]) }}" method="POST">
+                <a class="btn btn-default" href="{{ route('devices.edit', ['device'=>$device->id]) }}">Edit</a>
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn btn-danger">Delete</button>
@@ -46,7 +46,7 @@
     </table>
   </div>
 </div>
-<a href="{{ route('hardwares.create') }}" class="btn btn-primary">Create</a>
+<a href="{{ route('devices.create') }}" class="btn btn-primary">Create</a>
 @stop
 
 @section('js')
