@@ -20,10 +20,7 @@ class UserdeviceController extends Controller
         $devices = Device::all();
         $deviceusers = Deviceuser::all();
 
-
-        $unused_devices =  Device::without("Userdevices")->get();
-
-        return view('userdevices', compact('userdevices', 'devices', 'deviceusers', 'unused_devices'));
+        return view('userdevices', compact('userdevices', 'devices', 'deviceusers'));
     }
 
     /**
