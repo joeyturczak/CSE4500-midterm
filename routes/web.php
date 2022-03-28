@@ -6,6 +6,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DeviceController;
 use App\Http\Controllers\DeviceuserController;
 use App\Http\Controllers\UserdeviceController;
+use App\Http\Controllers\NoteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +36,8 @@ Route::resource('/devices', DeviceController::class);
 Route::resource('/deviceusers', DeviceuserController::class);
 
 Route::resource('/userdevices', UserdeviceController::class);
+
+Route::resource('/notes', NoteController::class);
 
 
 Route::fallback(function() {
