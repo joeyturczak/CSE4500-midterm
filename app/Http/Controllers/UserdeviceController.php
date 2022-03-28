@@ -44,7 +44,23 @@ class UserdeviceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'device_id' => 'required',
+            'deviceuser_id' => 'nullable',
+            'invoice_number' => 'required',
+            'price' => 'required',
+            'purchase_date' => 'required',
+        ]);
+
+        $userdevices = Userdevice::create([
+            'device_id' => $request->device_id,
+            'deviceuser_id' => $request->deviceuser_id,
+            'invoice_number' => $request->invoice_number,
+            'price' => $request->price,
+            'purchase_date' => $request->purchase_date,
+        ]);
+
+        return $this->index();
     }
 
     /**
@@ -55,7 +71,8 @@ class UserdeviceController extends Controller
      */
     public function show($id)
     {
-        //
+        $userdevice = Userdevice::find($id);
+        return view('userdevices.show', compact('userdevice'));
     }
 
     /**
@@ -66,7 +83,11 @@ class UserdeviceController extends Controller
      */
     public function edit($id)
     {
-        //
+        $devices = Device::all();
+        $deviceusers = Deviceuser::all();
+
+        $userdevice = Userdevice::find($id);
+        return view('userdevices.edit', compact('userdevice', 'devices', 'deviceusers'));
     }
 
     /**
@@ -78,7 +99,25 @@ class UserdeviceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validated = $request->validate([
+            'device_id' => 'required',
+            'deviceuser_id' => 'nullable',
+            'invoice_number' => 'required',
+            'price' => 'required',
+            'purchase_date' => 'required',
+        ]);
+
+        $userdevice = Device::find($id);
+
+        $userdevice->device_id = $request->device_id;
+        $userdevice->deviceuser_id = $request->deviceuser_id;
+        $userdevice->invoice_number = $request->invoice_number;
+        $userdevice->price = $request->price;
+        $userdevice->purchase_date = $request->purchase_date;
+
+        $userdevice->update();
+
+        return $this->index();
     }
 
     /**
@@ -89,6 +128,10 @@ class UserdeviceController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $userdevice = Userdevice::find($id);
+        
+        $userdevice->delete();
+
+        return $this->index();
     }
 }
