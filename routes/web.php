@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ManufacturerController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\HardwareController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,9 +28,7 @@ Route::resource('/manufacturers', ManufacturerController::class);
 
 Route::resource('/categories', CategoryController::class);
 
-Route::get('/hardware', function() {
-    return view('hardwares');
-});
+Route::resource('/hardwares', HardwareController::class);
 
 Route::get('/equipment', function() {
     return view('equipment');
