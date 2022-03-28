@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Note;
+use App\Models\Userdevices;
 
 class NoteController extends Controller
 {
@@ -15,8 +16,10 @@ class NoteController extends Controller
     public function index()
     {
         $notes = Note::all();
+        $userdevices = Userdevice::all();
 
-        return view('notes', compact('notes'));
+
+        return view('notes', compact('notes', 'userdevices'));
     }
 
     /**
