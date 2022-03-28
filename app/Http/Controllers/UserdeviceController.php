@@ -18,8 +18,6 @@ class UserdeviceController extends Controller
      */
     public function index()
     {
-        // $userdevices = Userdevice::all();
-
         $devices = Device::all();
         $deviceusers = Deviceuser::all();
 
