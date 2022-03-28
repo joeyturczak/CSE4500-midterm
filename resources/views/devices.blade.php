@@ -16,7 +16,7 @@
     <table id="table" class="table table-bordered">
       <thead>
         <tr>
-          <th style="width: 10px">#</th><th>Name</th><th style="width: 90px">Specification</th><th style="width: 120px">Action</th>
+          <th style="width: 10px">#</th><th>Name</th><th>Category</th><th style="width: 90px">Specification</th><th style="width: 120px">Action</th>
         </tr>
       </thead>
       <tbody>
@@ -25,6 +25,7 @@
         <tr>
           <td>{{ $device->id }}</td>
           <td>{{ $device->name }}</td>
+          <td>{{ $device->category->name }}</td>
           <td>
             <div style="text-align: center;">
               <a class="btn btn-default" href="{{ route('devices.show', ['device'=>$device->id]) }}">View</a>
