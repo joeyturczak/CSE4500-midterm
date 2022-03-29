@@ -33,7 +33,7 @@
     @endforeach
   </x-adminlte-select>
 
-  <x-adminlte-textarea name="description" value="{{ $note->description }}" type="textarea" label="Description" />
+  <x-adminlte-textarea name="description" value="{{ $note->description }}" type="textarea" label="Description">{{ $note->description }}</x-adminlte-textarea>
   <x-adminlte-button type="Submit" label="Submit" />
 </form>
 @stop
