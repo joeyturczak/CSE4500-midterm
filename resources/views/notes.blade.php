@@ -22,7 +22,7 @@
         @foreach($notes AS $note)
         <tr>
           <td>{{ $note->id }}</td>
-          <td>{{ $note->updated_at }}</td>
+          <td>{{ $note->updated_at }} UTC</td>
           <td>{{ $note->userdevice->device->manufacturer->name }}</td>
           <td>{{ $note->userdevice->device->name }}</td>
           <td>{{ $note->userdevice->deviceuser->first_name." ".$note->userdevice->deviceuser->last_name }}</td>
