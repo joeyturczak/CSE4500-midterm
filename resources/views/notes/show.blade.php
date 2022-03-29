@@ -14,7 +14,7 @@
   <p>Device Name: {{ $note->userdevice->device->name }}</p>
 
   <h4>Note</h4>
-  <p>Last updated: {{ $note->updated_at }}</p>
+  <p>Last updated: {{ $note->updated_at }} UTC</p>
   <p>Reason: ${{ $note->reason }}</p>
   <p>Description: {{ $note->description }}</p>
 @stop
