@@ -1,10 +1,12 @@
 @extends('adminlte::page')
 
+@section('plugins.Datatables', true)
+
 @section('title', 'Manufacturers')
 
 @section('content_header')
   <!-- <h1>Manufacturers</h1> -->
-  <h1>{{ $manufacture->name }}</h1>
+  <h1>{{ $manufacturer->name }}</h1>
 @stop
 
 @section('content')
@@ -100,4 +102,12 @@
     <p>{{ $manufacturer->support_phone; }}</p>
     <p>{{ $manufacturer->support_email; }}</p>
   </div> -->
+@stop
+
+@section('js')
+    <script>
+    $(document).ready(function() {
+      $('#table').DataTable();
+    });
+    </script>
 @stop
