@@ -35,7 +35,7 @@
         <h3 class="card-title">Equipment</h3>
       </div>
       <div class="card-body">
-        <table id="equipment_table" class="table" style="width:100%">
+        <table id="table" class="table" style="width:100%">
             <thead>
                 <tr>
                     <th>Name</th>
