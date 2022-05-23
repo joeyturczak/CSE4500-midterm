@@ -5,7 +5,6 @@
 @section('title', 'Manufacturers')
 
 @section('content_header')
-  <!-- <h1>Manufacturers</h1> -->
   <h1>{{ $manufacturer->name }}</h1>
 @stop
 
@@ -23,19 +22,6 @@
         <h4>Tech Support Contact Information</h4>
         <p>{{ $manufacturer->support_phone; }}</p>
         <p>{{ $manufacturer->support_email; }}</p>
-        <!-- <strong><i class="fas fa-book mr-1"></i> Sales</strong>
-        <p class="text-muted">
-          {{ $manufacture->sales_name }}<br>
-          {{ $manufacture->sales_phone }}<br>
-          {{ $manufacture->sales_email }}
-        </p>
-        <hr>
-        <strong><i class="far fa-file-alt mr-1"></i> Tech Support</strong>
-        <p class="text-muted">
-          {{ $manufacture->techsupport_name }}<br>
-          {{ $manufacture->techsupport_phone }}<br>
-          {{ $manufacture->techsupport_email }}
-        </p> -->
       </div>
       <div class="card-footer">
         <a class="btn btn-success btn-block" href="{{ route('manufacturers.edit',['manufacturer'=>$manufacturer->id]) }}">Edit</a>
@@ -91,17 +77,6 @@
   </div>
 
 </div>
-
-  <!-- <h2>{{ $manufacturer->name; }}</h2>
-  <hr>
-  <div>
-    <h4>Sales Contact Information</h4>
-    <p>{{ $manufacturer->sales_phone; }}</p>
-    <p>{{ $manufacturer->sales_email; }}</p>
-    <h4>Tech Support Contact Information</h4>
-    <p>{{ $manufacturer->support_phone; }}</p>
-    <p>{{ $manufacturer->support_email; }}</p>
-  </div> -->
 @stop
 
 @section('js')
