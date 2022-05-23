@@ -14,7 +14,11 @@
     <table id="table" class="table table-bordered">
       <thead>
         <tr>
-          <th style="width: 10px">#</th><th>Name</th><th style="width: 120px">Action</th>
+          <th style="width: 10px">#</th>
+          <th>Name</th>
+          <th style="width: 90px">Equipment</th>
+          <th style="width: 120px">Action</th>
+
         </tr>
       </thead>
       <tbody>
@@ -23,6 +27,11 @@
         <tr>
           <td>{{ $category->id }}</td>
           <td>{{ $category->name }}</td>
+          <td>
+            <div style="text-align: center;">
+              <a class="btn btn-default" href="{{ route('categories.show', ['category'=>$category->id]) }}">View</a>
+            </div>
+          </td>
           <td>
             <div style="display: inline">
               <form style="margin: 0; padding: 0" action="{{ route('categories.destroy', ['category'=>$category->id]) }}" method="POST">

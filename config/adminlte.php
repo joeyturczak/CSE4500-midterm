@@ -235,6 +235,11 @@ return [
             'icon' => 'fas fa-fw fa-building',
         ],
         [
+            'text' => 'Categories',
+            'url'  => 'categories',
+            'icon' => 'fas fa-fw fa-folder',
+        ],
+        [
             'text' => 'Hardware',
             'url'  => 'devices',
             'icon' => 'fas fa-fw fa-hdd',
