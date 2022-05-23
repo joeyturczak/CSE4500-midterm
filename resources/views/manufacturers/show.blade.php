@@ -43,6 +43,10 @@
                     <th>Screen Size</th>
                     <th>RAM</th>
                     <th>Storage</th>
+                    <th>Invoice#</th>
+                    <th>Price</th>
+                    <th>Purchase Date</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -54,6 +58,17 @@
                         <td>{{ $item->device->spec_screen_size }}</td>
                         <td>{{ $item->device->spec_ram }}</td>
                         <td>{{ $item->device->spec_storage }}</td>
+                        <td>{{ $item->invoice_number }}</td>
+                        <td>{{ $item->price }}</td>
+                        <td>{{ $item->purchase_date }}</td>
+                        <td>
+                          <a class="btn btn-primary btn-xs" href="{{ route('userdevices.show',['userdevice'=>$item->id]) }}">View</a>
+                          <form action="{{ route('userdevices.destroy',['userdevice'=>$item->id]) }}" method="POST" >
+                            @csrf
+                            <input type="hidden" name="_method" value="DELETE" />
+                            <button type="submit" class="btn btn-danger btn-xs">Delete</button>
+                          </form>
+                        </td>
                     </tr>
                   @endforeach
                 @endforeach
