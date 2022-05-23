@@ -43,26 +43,16 @@
                     <th>Screen Size</th>
                     <th>RAM</th>
                     <th>Storage</th>
-                    <th>Invoice#</th>
-                    <th>Price</th>
-                    <th>Purchase Date</th>
-                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach($manufacturer->devices->userdevice AS $item)
+                @foreach($manufacturer->devices AS $item)
                 <tr>
                     <td>{{ $item->device->manufacturer->name }}</td>
                     <td>{{ $item->device->category->name }}</td>
                     <td>{{ $item->device->spec_screen_size }}</td>
                     <td>{{ $item->device->spec_ram }}</td>
                     <td>{{ $item->device->spec_storage }}</td>
-                    <td>{{ $item->invoice_number }}</td>
-                    <td>{{ $item->price }}</td>
-                    <td>{{ $item->purchase_date }}</td>
-                    <td>
-                      
-                    </td>
                 </tr>
                 @endforeach
             </tbody>
