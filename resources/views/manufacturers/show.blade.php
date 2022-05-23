@@ -61,12 +61,7 @@
                     <td>{{ $item->price }}</td>
                     <td>{{ $item->purchase_date }}</td>
                     <td>
-                      <a class="btn btn-primary btn-xs" href="{{ route('userdevices.show',['userdevice'=>$item->id]) }}">View</a>
-                      <form action="{{ route('userdevices.destroy',['userdevice'=>$item->id]) }}" method="POST" >
-                        @csrf
-                        <input type="hidden" name="_method" value="DELETE" />
-                        <button type="submit" class="btn btn-danger btn-xs">Delete</button>
-                      </form>
+                      
                     </td>
                 </tr>
                 @endforeach
