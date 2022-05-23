@@ -46,13 +46,13 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($manufacturer->devices AS $item)
+                @foreach($manufacturer->devices->userdevice AS $item)
                 <tr>
-                    <td>{{ $item->name }}</td>
-                    <td>{{ $item->category->name }}</td>
-                    <td>{{ $item->spec_screen_size }}</td>
-                    <td>{{ $item->spec_ram }}</td>
-                    <td>{{ $item->spec_storage }}</td>
+                    <td>{{ $item->device->name }}</td>
+                    <td>{{ $item->device->category->name }}</td>
+                    <td>{{ $item->device->spec_screen_size }}</td>
+                    <td>{{ $item->device->spec_ram }}</td>
+                    <td>{{ $item->device->spec_storage }}</td>
                 </tr>
                 @endforeach
             </tbody>
