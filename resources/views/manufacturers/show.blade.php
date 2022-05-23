@@ -48,7 +48,7 @@
             <tbody>
                 @foreach($manufacturer->devices AS $item)
                 <tr>
-                    <td>{{ $item->device->manufacturer->name }}</td>
+                    <td>{{ $item->device->name }}</td>
                     <td>{{ $item->device->category->name }}</td>
                     <td>{{ $item->device->spec_screen_size }}</td>
                     <td>{{ $item->device->spec_ram }}</td>
